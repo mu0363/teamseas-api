@@ -17,13 +17,16 @@
     "docker:up": "docker-compose -f ./docker/docker-compose.yml -p teamseas-api up -d",
     "docker:down": "docker-compose -f ./docker/docker-compose.yml -p teamseas-api down",
     "docker:reset": "yarn docker:down && yarn docker:up",
-    "migrate": "yarn prisma db push",
+    "migrate": "yarn prisma db push && npx prisma db seed",
     "gen-types": "ts-node ./src/generate-typings.ts",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:cov": "jest --coverage",
     "test:debug": "node --inspect-brk -r tsconfig-paths/register -r ts-node/register node_modules/.bin/jest --runInBand",
     "test:e2e": "jest --config ./test/jest-e2e.json"
+  },
+  "prisma": {
+    "seed": "ts-node prisma/seed.ts"
   },
   "dependencies": {
     "@nestjs/apollo": "^10.0.8",
