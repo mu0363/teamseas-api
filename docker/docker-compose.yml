@@ -2,9 +2,9 @@ version: '3.8'
 services:
   db:
     image: mysql:5.7
-    container_name: teamsea-api-db
+    container_name: teamseas-api-db
     environment:
-      MYSQL_DATABASE: teamsea-api
+      MYSQL_DATABASE: teamseas-api
       MYSQL_ROOT_USER: root
       MYSQL_ROOT_PASSWORD: password
       TZ: 'Asia/Tokyo'
